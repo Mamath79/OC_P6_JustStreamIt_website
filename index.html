@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./juststreamit_styles/modal.css" rel="stylesheet">
+    <link href="./juststreamit_styles/fonts.css" rel="stylesheet">
+    <link href="./juststreamit_styles/styles.css" rel="stylesheet">
+    <link href="./juststreamit_styles/mobile.css" rel="stylesheet"> 
+    <script src="./juststreamit_scripts/data_best_movies.js" defer></script>
+    <script src="./juststreamit_scripts/data_movies_by_genre.js" defer></script>
+    <script src="./juststreamit_scripts/select_category.js" defer></script>
+    <script src="./juststreamit_scripts/modal.js" defer></script>
+    <title>JustStreamIt_V2</title>
+
+</head>
+
+<body>
+    <header>
+        <img src="logo/logo_JustSreamIt.png" alt="Logo JustStreamIt" />
+        <h1>Videos à la demande</h1>
+    </header>
+
+
+    <!-- Page principale -->
+    <main>
+        <section class="best-movie">
+            <h3>Meilleur film</h3>
+            <div class="best-movie-content">
+                <div class="movie-poster">
+                    <img id="rank1Image" />
+                </div>
+                <div class="movie-details">
+                    <h5 id="rank1Title">Titre du Film</h5>
+                    <p id="rank1Description">Description du Film</p>
+                    <button class="details-button" data-rank="1">details</button>
+                </div>
+            </div>
+        </section>
+        <section class="movie-categories">
+            <h3>Films les mieux notes</h3>
+            <div class="category">
+                <div class="movie-thumbnail">
+                    <img id="rank2Image" />
+                    <div class="banner">
+                        <span id="rank2Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-rank="2">details</button>
+                    </div>  
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="rank3Image" />
+                    <div class="banner">
+                        <span id="rank3Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-rank="3">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="rank4Image" />
+                    <div class="banner">
+                        <span id="rank4Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-rank="4">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="rank5Image" />
+                    <div class="banner">
+                        <span id="rank5Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-rank="5">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="rank6Image" />
+                    <div class="banner">
+                        <span id="rank6Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-rank="6">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="rank7Image" />
+                    <div class="banner">
+                        <span id="rank7Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-rank="7">details</button>
+                    </div>
+                </div>
+            </div>
+                
+        </section>
+        <section class="movie-categories">
+            <h3>Biography</h3>
+            <div class="category">
+                <div class="movie-thumbnail">
+                    <img id="genreBiographyrank1Image" />
+                    <div class="banner">
+                        <span id="genreBiographyrank1Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Biography" data-rank="1">details</button>
+                    </div>   
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="genreBiographyrank2Image" />
+                    <div class="banner">
+                        <span id="genreBiographyrank2Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Biography" data-rank="2">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="genreBiographyrank3Image" />
+                    <div class="banner">
+                        <span id="genreBiographyrank3Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Biography" data-rank="3">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="genreBiographyrank4Image" />
+                    <div class="banner">
+                        <span id="genreBiographyrank4Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Biography" data-rank="4">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="genreBiographyrank5Image" />
+                    <div class="banner">
+                        <span id="genreBiographyrank5Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Biography" data-rank="5">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="genreBiographyrank6Image" />
+                    <div class="banner">
+                        <span id="genreBiographyrank6Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Biography" data-rank="6">details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="movie-categories">
+            <h3>Family</h3>
+            <div class="category">
+                <div class="movie-thumbnail">
+                    <img id="genreFamilyrank1Image"/>
+                    <div class="banner">
+                        <span id="genreFamilyrank1Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Family" data-rank="1">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="genreFamilyrank2Image"/>
+                    <div class="banner">
+                        <span id="genreFamilyrank2Title" id="genreFamilyrank3Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Family" data-rank="2">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="genreFamilyrank3Image" />
+                    <div class="banner">
+                        <span id="genreFamilyrank'Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Family" data-rank="3">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="genreFamilyrank4Image" />
+                    <div class="banner">
+                        <span id="genreFamilyrank5Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Family" data-rank="4">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="genreFamilyrank5Image" />
+                    <div class="banner">
+                        <span id="genreFamilyrank6Title" class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Family" data-rank="5">details</button>
+                    </div>
+                </div>
+                <div class="movie-thumbnail">
+                    <img id="genreFamilyrank6Image" />
+                    <div class="banner">
+                        <span class="movie-title">movie-title</span>
+                        <button class="details-button" data-genre="Family" data-rank="6">details</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="movie-categories">
+            <h3>Autres</h3>
+            <div>
+                <select id="genres-select"></select>
+            </div>
+            <div id = "selected-genre-movies" class="category" >
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Fenetre MODAL -->
+    <div class="modal">
+        <div class="modal-content">
+            <p id="modal-title">Titre du Film</p>
+            <img id="modal-img" src="" alt="" />
+            <p id="modal-description">Description du Film</p>
+            <p id="modal-kind">Genre du Film</p>
+            <p id="modal-release-date">Date de sortie</p>
+            <p id="modal-rating">Score</p>
+            <p id="modal-director">Realisateur</p>
+            <p id="modal-actors">Acteurs</p>
+            <p id="modal-duration">Duree</p>
+            <p id="modal-country">Pays d'origine</p>
+            <p id="modal-box-office">Recettes au box-office</p>
+            <button class="close">close</button>
+        </div>
+    </div>
+</body>
+</html>

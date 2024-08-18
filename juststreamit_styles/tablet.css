@@ -1,8 +1,52 @@
-@media all and (min-width: 456px) and (max-width: 788px) {
-    .category ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        list-style-type: none;
-        padding: 0;
+/* Media query pour les tablettes (768px à 1024px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .movie-thumbnail {
+        min-width:47%;
+    }
+
+    /* Afficher uniquement 4 vignettes par catégorie */
+    .category .movie-thumbnail:nth-child(n+5) {
+        display: none;
+    }
+
+    /* Afficher le bouton "Voir plus" */
+    .see-more-button {
+        display: block;
+    }
+}
+
+/* Adaptation pour les tablettes et les mobiles */
+@media (max-width: 767px) {
+    .modal {
+        width: 90%;
+        max-height: 85vh;
+    }
+
+    .modal-content-first {
+        flex-direction: column; /* Réorganise en une colonne */
+    }
+
+    .modal-content-B {
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center; /* Centrer le texte pour un affichage agréable sur mobile */
+    }
+
+    .modal-content-B h3 {
+        font-size: 1.6em;
+    }
+
+    .modal-content-B p {
+        font-size: 1.1em;
+    }
+
+    .modal-content-A img {
+        max-width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .modal-content-C {
+        text-align: center; /* Centrer le texte de la description sur mobile */
     }
 }

@@ -9,8 +9,8 @@ async function getGenreMoviesIdByRank(genre, rank){
         const response = await fetch(nextPage);
         const data = await response.json();
 
-        
-        const moviesOnPage = data.results.map(movie =>movie.id);
+        // expliquer map
+        const moviesOnPage = data.results.map(movie => movie.id);
         movieIds = movieIds.concat(moviesOnPage);
 
         nextPage = data.next;
@@ -51,7 +51,6 @@ async function getMovieDetailsById(id){
         budget: budgetMovie,
         duration: durationMovie
     };
-
 };
 
 // fonction principale pour l'obtention des details d'un film par son classement 
@@ -94,6 +93,7 @@ async function displayDetailsGenreMovie(genre) {
         if (countriesElement) countriesElement.textContent = detailsGenreMovie.countries || "undefined";
         if (budgetElement) budgetElement.textContent = detailsGenreMovie.budget || "undefined";
         if (durationElement) durationElement.textContent = detailsGenreMovie.duration || "undefined";
+
     }    
 }
 
@@ -112,7 +112,6 @@ async function getGenresList() {
         genresList = genresList.concat(data.results);
         nextPage = data.next;
     }
-    console.log(genresList)
     return genresList;
 };
 
@@ -174,6 +173,7 @@ async function displayDetailsSelectedGenreMovie(genre) {
     }    
 };
 
+// fonction generant le contenu de la page avec les vignettes de films du genre selectionné
 async function initGenreSelection(){
     await appendSelectGenresList();
 
@@ -182,5 +182,32 @@ async function initGenreSelection(){
         await displayDetailsSelectedGenreMovie(selectedGenre);
     });
 };
+
+// bouton voir plus pour tablette et mobile
+document.querySelectorAll('.see-more-button').forEach(button => {
+    button.addEventListener('click', function() {
+        // previous element sibling: la div dont la class est category
+        const category = this.previousElementSibling;
+        category.querySelectorAll('.movie-thumbnail:nth-child(n+5)').forEach(thumbnail => {
+            thumbnail.style.display = 'block';
+        });
+        this.style.display = 'none'; // Cacher le bouton après avoir affiché les vignettes
+        // next element sibling : see-less-button
+        this.nextElementSibling.style.display = 'block';
+    });
+});
+
+
+// bouton voir moins pour tablette et mobile
+document.querySelectorAll('.see-less-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const category = this.previousElementSibling.previousElementSibling;
+        category.querySelectorAll('.movie-thumbnail:nth-child(n+5)').forEach(thumbnail => {
+            thumbnail.style.display = 'none';
+        });
+        this.style.display = 'none'; // Cacher le bouton après avoir affiché les vignettes
+        this.previousElementSibling.style.display = 'block';
+    });
+});
 
 initGenreSelection();

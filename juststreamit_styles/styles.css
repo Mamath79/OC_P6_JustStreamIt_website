@@ -3,7 +3,8 @@
 /* global styles */
 * { 
     font-family: Oswald, sans-serif;
-    margin: 2%;
+    font-weight: lighter;
+    margin: 3%;
     font-size: 1em;
 }
 
@@ -16,12 +17,14 @@ body {
 
 h1 {
     color: rgb(255, 255, 255);
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
-h3 {
+h3,h5 {
     color: rgb(0, 0, 0);
     font-size: 3em;
+    font-weight:600;
+    justify-content: flex-start;
 }
 
 header {
@@ -30,7 +33,7 @@ header {
     align-items:center;
     background-color: #61787F;
     color: #fff;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 header img {
@@ -53,7 +56,7 @@ main {
     padding: 0;
 }
 
-.best-movie h2 {
+.best-movie p {
     font-size: 1.8em;
     text-align: left;
 }
@@ -61,7 +64,6 @@ main {
 .best-movie-content {
     display: flex;
     align-items: flex-start;
-    flex-wrap: wrap;
     justify-content:space-around;
     border: 5px black solid ;
     align-content:center;
@@ -82,6 +84,11 @@ main {
     justify-items: space-between;
 }
 
+.movie-details details-button {
+    margin-top: auto;
+    align-self: flex-start; 
+}
+
 .movie-details h3 {
     display: flex;
     align-content:stretch;
@@ -94,105 +101,43 @@ main {
     font-size: 1.5em;
 }
 
-.details-button, .play-button {
+.details-button {
+    align-items: center;
     background-color: #f00;
     color: #fff;
+    font-weight:400;
+    width: 166px;
+    height: 68px;
     border: none;
     border-radius: 10px;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 2em;
 }
 
-.details-button:hover, .play-button:hover {
+.details-button:hover{
     background-color: #d00;
 }
 
 .movie-categories {
     display: flex;
     flex-direction: column;
+    margin: 0px;
 }
 
 .category {
     display: flex;
     flex-wrap: wrap;
-    
+    gap: 10px;
 
 }
-
-.category ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    list-style-type: none;
-    padding: 0;
-}
-
-.category ul li {
-    margin-bottom: 5px;
-}
-
-.category ul li img {
-    width: 100%;
-    height: auto;
-    max-width: 252px;
-    max-height: 247px;
-}
-
-.category ul li a {
-    text-decoration: none;
-    color: #00f;
-}
-
-.other-categories {
-    margin-top: 20px;
-}
-
-.dropdown {
-    display: inline-block;
-
-}
-
-.dropdown-button {
-    background-color: #61787F;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropdown-button {
-    background-color: #555;
-}
-
-
 /* Styles pour les vignettes de films avec bandeau */
 .movie-thumbnail {
+    min-width:31%;
+    flex-grow:1;
     position: relative;
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: auto;
     max-width: 300px;
@@ -204,11 +149,12 @@ main {
     height:fit-content;
     align-items: center;
     justify-content: space-around;
+
 }
 
 .banner {
     position: absolute;
-    top: 33%;
+    top: 15%;
     left: 0;
     width: 100%;
     height: 33%;
@@ -232,6 +178,8 @@ main {
     background-color: black;
     color: #fff;
     border: none;
+    width: 100px;
+    height: 40px;
     border-radius: 10px;
     padding: 5px 10px;
     cursor: pointer;
@@ -243,54 +191,105 @@ main {
     background-color: #d00;
 }
 
+
+/* Styles du bouton "Voir plus" */
+.see-more-button {
+    display:none;
+    background-color: #f00;
+    color: white;
+    padding: 10px;
+    font-weight:400;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px auto;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Styles du bouton "Voir moins" */
+.see-less-button {
+    display:block;
+    background-color: #f00;
+    color: white;
+    padding: 10px;
+    font-weight:400;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px auto;
+    border: none;
+    border-radius: 5px;
+}
+
 /* Styles de la fenêtre modale */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 778px;
-    height: 939px;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 6px solid #888;
-    padding: 20px;
-}
-
-.modal-content {
+    width: 800px;
+    max-width: 90%; /* Pour s'assurer que la modale ne dépasse pas la largeur de l'écran */
+    max-height: 90%;
+    overflow-y: auto;
     background-color: white;
-    margin: auto;
+    border: 6px solid #000000;
     padding: 20px;
-    border: 1px solid #888;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
+    box-sizing:content-box;
+    z-index: 1000;
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+/* Première section : Deux colonnes pour les écrans larges */
+.modal-content-first {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1%;
+    margin-bottom: 10px;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+/* Colonne gauche : Détails du film */
+.modal-content-B {
+    flex: 1;
+    font-size: 1.2em;
+    font-weight:600;
+    margin: 1%;
+    margin-right: 10px;
 }
 
-.modal-details {
+.modal-content-B p {
+    font-size: 1.2em;
+    font-weight:600;
+    margin: 10px 0;
+}
+
+/* Colonne droite : Image du film */
+.modal-content-A img {
+    max-width: 100%;
+    height: auto;
+
+}
+
+/* Deuxième section : Description en une seule colonne */
+.modal-content-C {
+    margin-top: 20px;
     text-align: left;
 }
 
-.modal-title {
-    margin-top: 0;
+.modal-content-C p {
+    margin: 10px 0;
+    font-size: 1.5em;
 }
 
-.modal p {
-    margin: 10px 0;
+.modal-content-C button.close {
+    display: block;
+    background-color: #f00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px auto 0; /* Centrer le bouton */
+    text-align: center;
+    width: 120px;
 }

@@ -23,7 +23,7 @@ async function getMovieDataByGenreToDisplay(button) {
     return movieDataDisplay
 };
 
-// Lie un  evenement à chaque bouton de details pour ouvrir la modal
+// Lie un evenement à chaque bouton de details pour ouvrir la modal
 
 openButtons.forEach(button => {
     button.addEventListener('click', async () => {
@@ -42,6 +42,7 @@ function openModal(movieDetails) {
     const titleElement = document.getElementById('modal-title');
     const imgElement = document.getElementById('modal-img');
     const descriptionElement = document.getElementById('modal-description');
+    const longDescriptionElement = document.getElementById('modal-long-description');
     const kindElement = document.getElementById('modal-kind');
     const releaseDateElement = document.getElementById('modal-release-date');
     const ratingElement = document.getElementById('modal-rating');
@@ -55,6 +56,7 @@ function openModal(movieDetails) {
     if (titleElement) titleElement.textContent = movieDetails.title;
     if (imgElement) imgElement.src = movieDetails.thumbnail;
     if (descriptionElement) descriptionElement.textContent = movieDetails.description;
+    if (longDescriptionElement) longDescriptionElement.textContent = movieDetails.longDescription;
     if (kindElement) kindElement.textContent = movieDetails.genres.join(', ');
     if (releaseDateElement) releaseDateElement.textContent = movieDetails.year;
     if (ratingElement) ratingElement.textContent = movieDetails.imdbScore;

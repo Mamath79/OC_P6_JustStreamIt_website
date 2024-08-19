@@ -63,29 +63,15 @@ async function displayDetailsBestMovie() {
 
         const titleElement = document.getElementById(`rank${rank}Title`);
         const imageElement = document.getElementById(`rank${rank}Image`);
-        const yearElement = document.getElementById(`rank${rank}Year`);
+
         const descriptionElement = document.getElementById(`rank${rank}Description`);
-        const longDescriptionElement = document.getElementById(`rank${rank}Long description`);
-        const imdbScoreElement = document.getElementById(`rank${rank}Score Imdb`);
-        const genresElement = document.getElementById(`rank${rank}Genre`);
-        const directorsElement = document.getElementById(`rank${rank}Directors`);
-        const actorsElement = document.getElementById(`rank${rank}Actors`);
-        const countriesElement = document.getElementById(`rank${rank}Contrie`);
-        const budgetElement = document.getElementById(`rank${rank}Budget`);
-        const durationElement = document.getElementById(`rank${rank}Duration`);
+
 
         if (titleElement) titleElement.textContent = detailsBestMovie.title || "unapplicable";
         if (imageElement) imageElement.src = detailsBestMovie.thumbnail || "unapplicable";
-        if (yearElement) yearElement.textContent = detailsBestMovie.year || "unapplicable";
+
         if (descriptionElement) descriptionElement.textContent = detailsBestMovie.description || "unapplicable";
-        if (longDescriptionElement) longDescriptionElement.textContent = detailsBestMovie.longDescription || "unapplicable";
-        if (imdbScoreElement) imdbScoreElement.textContent = detailsBestMovie.imdbScore || "unapplicable";
-        if (genresElement) genresElement.textContent = detailsBestMovie.genres.join(',') || "unapplicable";
-        if (directorsElement) directorsElement.textContent = detailsBestMovie.directors.join(',') || "unapplicable";
-        if (actorsElement) actorsElement.textContent = detailsBestMovie.actors.join(',') || "unapplicable";
-        if (countriesElement) countriesElement.textContent = detailsBestMovie.countries || "unapplicable";
-        if (budgetElement) budgetElement.textContent = detailsBestMovie.budget || "unapplicable";
-        if (durationElement) durationElement.textContent = detailsBestMovie.duration || "unapplicable";
+
     }
 };
 

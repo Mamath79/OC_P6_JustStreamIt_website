@@ -4,7 +4,9 @@
 * { 
     font-family: Oswald, sans-serif;
     font-weight: lighter;
-    margin: 3%;
+    margin: 2%;
+    padding: 0px;
+    box-sizing: 0;
     font-size: 1em;
 }
 
@@ -227,60 +229,32 @@ main {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
-    max-width: 90%; /* Pour s'assurer que la modale ne dépasse pas la largeur de l'écran */
-    max-height: 90%;
+    width: 778px;
+    height: 678px;
     overflow-y: auto;
     background-color: white;
     border: 6px solid #000000;
-    padding: 20px;
     box-sizing:content-box;
-    z-index: 1000;
-}
+    font-size: 1.3em
 
-/* Première section : Deux colonnes pour les écrans larges */
-.modal-content-first {
-    display: flex;
+}
+.modal-content-first-part {
+    display:flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 1%;
-    margin-bottom: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-around;
+    font-weight: 800;
 }
 
-/* Colonne gauche : Détails du film */
-.modal-content-B {
-    flex: 1;
-    font-size: 1.2em;
-    font-weight:600;
-    margin: 1%;
-    margin-right: 10px;
+.modal-content-first-part-top-left{
+    flex-grow :2;
+    margin: 0;
+    padding: 0;
 }
 
-.modal-content-B p {
-    font-size: 1.2em;
-    font-weight:600;
-    margin: 10px 0;
-}
-
-/* Colonne droite : Image du film */
-.modal-content-A img {
-    max-width: 100%;
-    height: auto;
-
-}
-
-/* Deuxième section : Description en une seule colonne */
-.modal-content-C {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.modal-content-C p {
-    margin: 10px 0;
-    font-size: 1.5em;
-}
-
-.modal-content-C button.close {
+/* Style pour le bouton close de la modal */
+.close {
     display: block;
     background-color: #f00;
     color: white;

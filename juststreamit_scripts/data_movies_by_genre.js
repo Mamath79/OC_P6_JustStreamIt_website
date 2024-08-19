@@ -5,8 +5,10 @@ async function getGenreMoviesIdByRank(genre, rank){
     let movieIds =[];
     let nextPage = `http://localhost:8000/api/v1/titles/?genre=${genre}&sort_by=-imdb_score`;
 
+    // le json donnant 5 films par pages,
+    //il est necessaire de recuperer les détails des 2 premieres pages
     for (let i = 0; i < 2 && nextPage; i++){
-        const response = await fetch(nextPage);
+        const response = await fetch(nextPage);  //revoir def await
         const data = await response.json();
 
         // expliquer map
@@ -61,7 +63,7 @@ async function mainGetDetailsGenreMovieByRank (genre, rank){
     return detailsGenreMovie
 };
 
-// affichage des details d'un des 7 meilleurs films
+// affichage des details d'un des 6 meilleurs films
 // avec test prealable d'existance du detail pour empecher un blocage
 
 async function displayDetailsGenreMovie(genre) {
@@ -70,36 +72,17 @@ async function displayDetailsGenreMovie(genre) {
 
         const titleElement = document.getElementById(`genre${genre}rank${rank}Title`);
         const imageElement = document.getElementById(`genre${genre}rank${rank}Image`);
-        const yearElement = document.getElementById(`genre${genre}rank${rank}Year`);
-        const descriptionElement = document.getElementById(`genre${genre}rank${rank}Description`);
-        const longDescriptionElement = document.getElementById(`genre${genre}rank${rank}Longdescription`);
-        const imdbScoreElement = document.getElementById(`genre${genre}rank${rank}ScoreImdb`);
-        const genresElement = document.getElementById(`genre${genre}rank${rank}Genre`);
-        const directorsElement = document.getElementById(`genre${genre}rank${rank}Directors`);
-        const actorsElement = document.getElementById(`genre${genre}rank${rank}Actors`);
-        const countriesElement = document.getElementById(`genre${genre}rank${rank}Contrie`);
-        const budgetElement = document.getElementById(`genre${genre}rank${rank}Budget`);
-        const durationElement = document.getElementById(`genre${genre}rank${rank}Duration`);
-
+        
         if (titleElement) titleElement.textContent = detailsGenreMovie.title || "undefined";
         if (imageElement) imageElement.src = detailsGenreMovie.thumbnail || "undefined";
-        if (yearElement) yearElement.textContent = detailsGenreMovie.year || "undefined";
-        if (descriptionElement) descriptionElement.textContent = detailsGenreMovie.description || "undefined";
-        if (longDescriptionElement) longDescriptionElement.textContent = detailsGenreMovie.longDescription || "undefined";
-        if (imdbScoreElement) imdbScoreElement.textContent = detailsGenreMovie.imdbScore || "undefined";
-        if (genresElement) genresElement.textContent = detailsGenreMovie.genres.join(',') || "undefined";
-        if (directorsElement) directorsElement.textContent = detailsGenreMovie.directors.join(",") || "undefined";
-        if (actorsElement) actorsElement.textContent = detailsGenreMovie.actors.join(',') || "undefined";
-        if (countriesElement) countriesElement.textContent = detailsGenreMovie.countries || "undefined";
-        if (budgetElement) budgetElement.textContent = detailsGenreMovie.budget || "undefined";
-        if (durationElement) durationElement.textContent = detailsGenreMovie.duration || "undefined";
-
     }    
 }
 
 displayDetailsGenreMovie("Biography")
 
 displayDetailsGenreMovie("Family")
+
+
 
 // fonction permetant de recuperer tous les genres de l'api
 async function getGenresList() {

@@ -27,6 +27,7 @@ h3,h5 {
     justify-content: flex-start;
 }
 
+/* Styles pour le header */
 header {
     display: flex;
     flex-direction: row;
@@ -46,11 +47,13 @@ header p {
     font-size: 1.8em;
 }
 
+/* Styles pour le main , reset les parametre eventuels de certains navigateurs */
 main {
     margin: 0;
     padding: 0;
 }
 
+/* Styles pour l'encart Best movie */
 .best-movie {
     margin: 0;
     padding: 0;
@@ -101,6 +104,7 @@ main {
     font-size: 1.5em;
 }
 
+/* Styles pour les boutons */
 .details-button {
     align-items: center;
     background-color: #f00;
@@ -119,6 +123,7 @@ main {
     background-color: #d00;
 }
 
+
 .movie-categories {
     display: flex;
     flex-direction: column;
@@ -133,6 +138,7 @@ main {
 }
 /* Styles pour les vignettes de films avec bandeau */
 .movie-thumbnail {
+    display: block;
     min-width:31%;
     flex-grow:1;
     position: relative;

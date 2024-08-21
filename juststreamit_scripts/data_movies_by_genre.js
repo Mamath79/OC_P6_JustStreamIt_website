@@ -72,7 +72,7 @@ async function displayDetailsGenreMovie(genre) {
 
         const titleElement = document.getElementById(`genre${genre}rank${rank}Title`);
         const imageElement = document.getElementById(`genre${genre}rank${rank}Image`);
-        
+
         if (titleElement) titleElement.textContent = detailsGenreMovie.title || "undefined";
         if (imageElement) imageElement.src = detailsGenreMovie.thumbnail || "undefined";
     }    
@@ -171,7 +171,7 @@ document.querySelectorAll('.see-more-button').forEach(button => {
     button.addEventListener('click', function() {
         // previous element sibling: la div dont la class est category
         const category = this.previousElementSibling;
-        category.querySelectorAll('.movie-thumbnail:nth-child(n+5)').forEach(thumbnail => {
+        category.querySelectorAll('.movie-thumbnail:nth-child(n+3)').forEach(thumbnail => {
             thumbnail.style.display = 'block';
         });
         this.style.display = 'none'; // Cacher le bouton après avoir affiché les vignettes
@@ -185,12 +185,14 @@ document.querySelectorAll('.see-more-button').forEach(button => {
 document.querySelectorAll('.see-less-button').forEach(button => {
     button.addEventListener('click', function() {
         const category = this.previousElementSibling.previousElementSibling;
-        category.querySelectorAll('.movie-thumbnail:nth-child(n+5)').forEach(thumbnail => {
+        category.querySelectorAll('.movie-thumbnail:nth-child(n+3)').forEach(thumbnail => {
             thumbnail.style.display = 'none';
         });
         this.style.display = 'none'; // Cacher le bouton après avoir affiché les vignettes
         this.previousElementSibling.style.display = 'block';
     });
 });
+
+
 
 initGenreSelection();

@@ -63,15 +63,11 @@ async function displayDetailsBestMovie() {
 
         const titleElement = document.getElementById(`rank${rank}Title`);
         const imageElement = document.getElementById(`rank${rank}Image`);
-
         const descriptionElement = document.getElementById(`rank${rank}Description`);
-
 
         if (titleElement) titleElement.textContent = detailsBestMovie.title || "unapplicable";
         if (imageElement) imageElement.src = detailsBestMovie.thumbnail || "unapplicable";
-
         if (descriptionElement) descriptionElement.textContent = detailsBestMovie.description || "unapplicable";
-
     }
 };
 

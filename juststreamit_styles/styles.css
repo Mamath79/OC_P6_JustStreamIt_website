@@ -10,8 +10,6 @@
     font-size: 1em;
 }
 
-
-
 body {
     margin: 20;
     padding: 0;
@@ -245,9 +243,10 @@ main {
     align-items: flex-start;
     justify-content: space-around;
     font-weight: 800;
+
 }
 
-.modal-content-first-part-top-left{
+.modal-content-first-part-top-left {
     flex-grow :2;
     margin: 0;
     padding: 0;

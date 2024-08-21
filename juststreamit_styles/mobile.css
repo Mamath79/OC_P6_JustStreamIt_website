@@ -59,3 +59,40 @@
         display: block;
     }
 }
+
+/* Adaptation pour les tablettes et les mobiles */
+@media screen and (max-width: 456px) {
+    .modal {
+        width: 50%;
+        max-height: 85vh;
+        flex-direction: column; /* Réorganise en une colonne */
+    }
+
+    .modal-content-first-part {
+        flex-direction: column; /* Réorganise en une colonne */
+    }
+
+    .modal-content-first-part-top-left {
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center; /* Centrer le texte pour un affichage agréable sur mobile */
+    }
+
+    .modal-content-first-part-top-left  h3 {
+        font-size: 1.6em;
+    }
+
+    .modal-content-first-part-top-left  p {
+        font-size: 1.1em;
+    }
+
+    .modal-content-first-part-top-right img {
+        max-width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .modal-content-second-part {
+        text-align: center; /* Centrer le texte de la description sur mobile */
+    }
+}

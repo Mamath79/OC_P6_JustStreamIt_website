@@ -54,6 +54,7 @@ function openModal(movieDetails) {
     const boxOfficeElement = document.getElementById('modal-box-office');
 
     // verif d'existance de l'element pour ne pas bloquer le code
+    
     if (titleElement) titleElement.textContent = movieDetails.title;
     if (imgElement) imgElement.src = movieDetails.thumbnail;
     if (imgElementTabletMobile) imgElementTabletMobile.src = movieDetails.thumbnail;
@@ -68,7 +69,10 @@ function openModal(movieDetails) {
     if (countryElement) countryElement.textContent = movieDetails.countries.join(', ');
     if (boxOfficeElement) boxOfficeElement.textContent = movieDetails.budget;
 
-    modal.style.display = 'block'
+    modal.style.display = 'block';
+
+    // Forcer le scroll en haut de la modal
+    modal.scrollTop = 0;
 };
 
 function closeModal() {

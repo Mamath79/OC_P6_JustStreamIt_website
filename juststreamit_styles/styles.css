@@ -66,25 +66,24 @@ main {
 
 .best-movie-content {
     display: flex;
-    align-items: flex-start;
-    justify-content:space-around;
+    align-items: stretch;
+    justify-content:space-between;
     border: 5px black solid ;
     align-content:center;
 }
 
 .movie-poster img {
-    width: 300px;
+    flex:1;
+    width: 337px;
     height: auto;
     margin-right: 20px;
 }
 
-.movie-details {
-    max-width: 500px;
-    max-height: 500px;
+.best-movie-details {
+    flex:1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-items: space-between;
+    box-sizing: border-box;
 }
 
 .movie-details details-button {
@@ -148,12 +147,12 @@ main {
     padding: 0;
     width: 100%;
     height: auto;
-    max-width: 300px;
-    max-height: auto;
+    max-width: 252px;
+    max-height:auto;
 }
 
 .movie-thumbnail img {
-    width: 100%;
+    width: 90%;
     height:fit-content;
     align-items: center;
     justify-content: space-around;
@@ -164,7 +163,7 @@ main {
     position: absolute;
     top: 15%;
     left: 0;
-    width: 100%;
+    width: 90%;
     height: 33%;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -199,7 +198,6 @@ main {
     background-color: #d00;
 }
 
-
 /* Styles du bouton "Voir plus" */
 .see-more-button {
     display:none;
@@ -231,7 +229,14 @@ main {
 .movie-selected-categorie-header{
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: baseline;
+}
+
+.genre-menu-select {
+    flex-grow: 2;
+    background-color: white;
+    font-size: 1em;
+    font-weight: 400;
 }
 
 /* Styles de la fenêtre modale */
@@ -279,6 +284,10 @@ main {
 }
 .modal-content-img{
     display: block;
+}
+
+.modal-content-img img{
+    width: 120%;
 }
 
 .modal-body {

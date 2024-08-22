@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
     header h1 {
         display: none;
@@ -26,8 +26,8 @@
 
     .movie-poster {
         clip-path: inset(0 0 0 0);
-        width: 300px;
-        height: 200px;
+        width: 334px;
+        height: 227px;
     }
 
     .movie-categories {
@@ -66,7 +66,7 @@
         display: none;
     }
 
-    /* Afficher uniquement 4 vignettes par catégorie */
+    /* Afficher uniquement 2 vignettes par catégorie */
     .category .movie-thumbnail:nth-child(n+3) {
         display: none;
     }

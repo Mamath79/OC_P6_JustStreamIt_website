@@ -1,5 +1,5 @@
-/* Media query pour les tablettes (768px à 1024px) */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* Media query pour les tablettes (768px à 1023px) */
+@media only screen and (min-width: 767px) and (max-width: 1024px) {
     .movie-thumbnail {
         min-width:47%;
     }
@@ -16,7 +16,7 @@
 }
 
 /* Adaptation pour les tablettes et les mobiles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1023px) {
     .modal {
         width: 90%;
         padding: 10px;
@@ -40,5 +40,8 @@
 
     .modal-content-img{
         display: none;
+    }
+    .modal-content-img-tablet-mobile img{
+        width: 100%;
     }
 }

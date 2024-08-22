@@ -10,7 +10,6 @@
     <link href="./juststreamit_styles/mobile.css" rel="stylesheet"> 
     <script src="./juststreamit_scripts/data_best_movies.js" defer></script>
     <script src="./juststreamit_scripts/data_movies_by_genre.js" defer></script>
-    <script src="./juststreamit_scripts/select_category.js" defer></script>
     <script src="./juststreamit_scripts/modal.js" defer></script>
     <title>JustStreamIt</title>
 
@@ -31,7 +30,7 @@
                 <div class="movie-poster">
                     <img id="rank1Image" />
                 </div>
-                <div class="movie-details">
+                <div class="best-movie-details">
                     <h5 id="rank1Title">Titre du Film</h5>
                     <p id="rank1Description">Description du Film</p>
                     <button class="details-button" data-rank="1">Détails</button>
@@ -192,7 +191,7 @@
                 <div class="movie-selected-categorie-header">
                     <h3>Autres : </h3>
                     <div>
-                        <select id="genres-select"></select>
+                        <select class="genre-menu-select" id="genres-select"></select>
                     </div>
                 </div>
                 <div id = "selected-genre-movies" class="category" ></div>

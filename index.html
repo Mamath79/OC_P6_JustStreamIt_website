@@ -12,7 +12,7 @@
     <script src="./juststreamit_scripts/data_movies_by_genre.js" defer></script>
     <script src="./juststreamit_scripts/select_category.js" defer></script>
     <script src="./juststreamit_scripts/modal.js" defer></script>
-    <title>JustStreamIt_V2</title>
+    <title>JustStreamIt</title>
 
 </head>
 
@@ -188,42 +188,59 @@
 
         </section>
         <section class="movie-categories">
-            <h3>Autres</h3>
-            <div>
-                <select id="genres-select"></select>
-            </div>
-            <div id = "selected-genre-movies" class="category" >
+            <div class="movie-selected-categorie">
+                <div class="movie-selected-categorie-header">
+                    <h3>Autres : </h3>
+                    <div>
+                        <select id="genres-select"></select>
+                    </div>
+                </div>
+                <div id = "selected-genre-movies" class="category" ></div>
             </div>
             <button class="see-more-button">Voir plus</button>
             <button class="see-less-button" style="display: none;">Voir moins</button>
         </section>
     </main>
+</body>
 
     <!-- Fenetre MODAL -->
     <div class="modal">
-        <div class="modal-content-first-part">
-            <div class="modal-content-first-part-top-left">
-                <h3 id="modal-title">Titre du Film</h3>
-                <span id="modal-release-date">Date de sortie</span>-
-                <span id="modal-kind">Genre du Film</span></br>
-                <span id="modal-duration">Duree</span><strong>Minutes</strong><strong>-</strong>
-                <strong>(</strong><span id="modal-country">Pays d'origine</span><strong>)</strong></br>
-                <strong>Gain</strong><span id="modal-box-office">Recettes au box-office</span><strong>$</strong> </br>
-                <span>Score Imbd:</span>
-                <span id="modal-rating">Score</span></br></br>
-                <strong>Réalisé par:</strong></br>
-                <span id="modal-director">Realisateur</span>
+        <button class="closeX">&#215;</button></br><!-- Croix pour fermer la modal -->
+        <div class="modal-content"> 
+            <div class="modal-header">        
+                <div class="modal-content-details">
+                    <h3 id="modal-title">Titre du Film</h3>
+                    <p>
+                        <span id="modal-release-date">Date de sortie</span>-
+                        <span id="modal-kind">Genre du Film</span></br>
+                        <span id="modal-duration">Duree</span><strong>Minutes</strong><strong>-</strong>
+                        <strong>(</strong><span id="modal-country">Pays d'origine</span><strong>)</strong></br>
+                        <strong>Gain</strong><span id="modal-box-office">Recettes au box-office</span><strong>$</strong> </br>
+                        <span>Score Imbd:</span>
+                        <span id="modal-rating">Score</span></br></br>
+                        <strong>Réalisé par:</strong></br>
+                        <span class="modal-director" id="modal-director">Realisateur</span>
+                    </p>
+                </div>
+                <div class="modal-content-img">
+                    <img id="modal-img" src="" alt="movie-thumbnail"/>
+                </div>
             </div>
-            <div class="modal-content-first-part-top-right">
-                <img id="modal-img" src="" alt=""/>
-            </div>
+            <div class="modal-body">
+                <div class="modal-content-description">
+                    <p id="modal-long-description">Description du Film</p>
+                </div>
+                <div class="modal-content-img-tablet-mobile">
+                    <img id="modal-img-tablet-mobile" src="" alt="same movie-thumbnail"/>
+                </div>
+                <div class="modal-content-actors">
+                    <p class="modal-avec">Avec :</p>
+                    <p id="modal-actors">Acteurs</p>
+                </div>
+            </div>  
+            <button class="close">Fermer</button>      
         </div>
-        <div class="modal-content-second-part">
-            <p id="modal-long-description">Description du Film</p>
-            <p>Avec :</p>
-            <p id="modal-actors">Acteurs</p>
-        </div>
-        <button class="close">Fermer</button>
+        
     </div>
-</body>
+
 </html>

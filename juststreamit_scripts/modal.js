@@ -2,7 +2,7 @@
 
 const modal = document.querySelector('.modal');
 const openButtons = document.querySelectorAll('.details-button');
-const closeButton = document.querySelector('.close');
+const closeButtons = document.querySelectorAll('.close, .closeX');
 
 
 
@@ -41,6 +41,7 @@ openButtons.forEach(button => {
 function openModal(movieDetails) {
     const titleElement = document.getElementById('modal-title');
     const imgElement = document.getElementById('modal-img');
+    const imgElementTabletMobile = document.getElementById('modal-img-tablet-mobile');
     const descriptionElement = document.getElementById('modal-description');
     const longDescriptionElement = document.getElementById('modal-long-description');
     const kindElement = document.getElementById('modal-kind');
@@ -55,6 +56,7 @@ function openModal(movieDetails) {
     // verif d'existance de l'element pour ne pas bloquer le code
     if (titleElement) titleElement.textContent = movieDetails.title;
     if (imgElement) imgElement.src = movieDetails.thumbnail;
+    if (imgElementTabletMobile) imgElementTabletMobile.src = movieDetails.thumbnail;
     if (descriptionElement) descriptionElement.textContent = movieDetails.description;
     if (longDescriptionElement) longDescriptionElement.textContent = movieDetails.longDescription;
     if (kindElement) kindElement.textContent = movieDetails.genres.join(', ');
@@ -73,4 +75,7 @@ function closeModal() {
     modal.style.display = 'none'
 };
 // Attache un evenement au bouton de fermeture pour fermer la modal
-closeButton.addEventListener('click', closeModal);
+closeButtons.forEach(button => {
+    button.addEventListener('click', closeModal);
+});
+

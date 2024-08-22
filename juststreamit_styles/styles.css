@@ -107,9 +107,10 @@ main {
 /* Styles pour les boutons */
 .details-button {
     align-items: center;
+    align-self: flex-end;
     background-color: #f00;
     color: #fff;
-    font-weight:400;
+    font-weight:300;
     width: 166px;
     height: 68px;
     border: none;
@@ -133,6 +134,7 @@ main {
 .category {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     gap: 10px;
 
 }
@@ -226,6 +228,12 @@ main {
     border-radius: 5px;
 }
 
+.movie-selected-categorie-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 /* Styles de la fenêtre modale */
 .modal {
     display: none;
@@ -234,31 +242,64 @@ main {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 778px;
-    height: 678px;
+    height: auto;
+    max-height: 90vh;
     overflow-y: auto;
     background-color: white;
-    border: 6px solid #000000;
-    box-sizing:content-box;
-    font-size: 1.3em
+    border: 2px solid #000000;
+    box-sizing: border-box;
 
 }
-.modal-content-first-part {
-    display:flex;
+
+/* Structure en deux colonnes pour Desktop */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    justify-content: space-around;
-    font-weight: 800;
-
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.modal-content-first-part-top-left {
-    flex-grow :2;
-    margin: 0;
-    padding: 0;
+.modal-content-details {
+    flex-grow: 2;
 }
 
-/* Style pour le bouton close de la modal */
+.modal-content-details p {
+    font-size: 1.5em;
+    font-weight:600;
+}
+
+.modal-director {
+    font-weight:100;
+
+}
+.modal-content-img{
+    display: block;
+}
+
+.modal-body {
+    margin-bottom: 20px;
+    display: felx;
+    flex-direction: column;
+    font-size: 1.5em;
+}
+.modal-content-img-tablet-mobile {
+    display:none;
+}
+
+.modal-description, .modal-actors {
+    margin-bottom: 20px;
+}
+
+.modal-avec {
+    font-weight:400;
+}
+
+/* Style pour le bouton close en Desktop */
 .close {
     display: block;
     background-color: #f00;
@@ -268,7 +309,21 @@ main {
     font-size: 1.5em;
     cursor: pointer;
     border-radius: 5px;
-    margin: 20px auto 0; /* Centrer le bouton */
+    margin: 20px;
     text-align: center;
     width: 120px;
+    align-self: center;
+}
+
+/* Style pour le bouton closeX pour tablette et mobile */
+.closeX {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #f00;
+    font-size: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
 }

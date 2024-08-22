@@ -16,38 +16,29 @@
 }
 
 /* Adaptation pour les tablettes et les mobiles */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     .modal {
         width: 90%;
-        max-height: 85vh;
-        flex-direction: column; /* Réorganise en une colonne */
+        padding: 10px;
     }
 
-    .modal-content-first-part {
-        flex-direction: column; /* Réorganise en une colonne */
+    .close {
+        display: none;
     }
 
-    .modal-content-first-part-top-left {
-        margin-right: 0;
-        margin-bottom: 20px;
-        text-align: center; /* Centrer le texte pour un affichage agréable sur mobile */
-    }
-
-    .modal-content-first-part-top-left  h3 {
-        font-size: 1.6em;
-    }
-
-    .modal-content-first-part-top-left  p {
-        font-size: 1.1em;
-    }
-
-    .modal-content-first-part-top-right img {
-        max-width: 80%;
-        margin: 0 auto;
+    .closeX {
         display: block;
     }
+    .modal-content {
+        display:flex;
+        flex-direction: column;
+    }
 
-    .modal-content-second-part {
-        text-align: center; /* Centrer le texte de la description sur mobile */
+    .modal-content-img-tablet-mobile {
+        display:block;
+    }
+
+    .modal-content-img{
+        display: none;
     }
 }

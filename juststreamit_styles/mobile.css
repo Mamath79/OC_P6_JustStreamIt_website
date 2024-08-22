@@ -1,14 +1,21 @@
-@media screen and (max-width: 456px) {
+@media screen and (max-width: 768px) {
 
     header h1 {
         display: none;
         margin: 0;
         font-size: 1.8em;
     }
+    
     header {
        justify-content:center;
     }
-    
+
+    .best-movie {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .best-movie-content {
         display: flex;
         flex-direction: column;
@@ -21,9 +28,14 @@
         clip-path: inset(0 0 0 0);
         width: 300px;
         height: 200px;
-
     }
 
+    .movie-categories {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .movie-details {
         width: 100%;
         text-align: center;
@@ -44,9 +56,14 @@
     }
 
     .details-button {
-        width: 80%;
+        width: 37%;
         height: 50px;
         font-size: 1.5em;
+        align-self: center;
+    }
+
+    .movie-selected-categorie-header h3 {
+        display: none;
     }
 
     /* Afficher uniquement 4 vignettes par catégorie */
@@ -57,42 +74,5 @@
     /* Afficher le bouton "Voir plus" */
     .see-more-button {
         display: block;
-    }
-}
-
-/* Adaptation pour les tablettes et les mobiles */
-@media screen and (max-width: 456px) {
-    .modal {
-        width: 50%;
-        max-height: 85vh;
-        flex-direction: column; /* Réorganise en une colonne */
-    }
-
-    .modal-content-first-part {
-        flex-direction: column; /* Réorganise en une colonne */
-    }
-
-    .modal-content-first-part-top-left {
-        margin-right: 0;
-        margin-bottom: 20px;
-        text-align: center; /* Centrer le texte pour un affichage agréable sur mobile */
-    }
-
-    .modal-content-first-part-top-left  h3 {
-        font-size: 1.6em;
-    }
-
-    .modal-content-first-part-top-left  p {
-        font-size: 1.1em;
-    }
-
-    .modal-content-first-part-top-right img {
-        max-width: 80%;
-        margin: 0 auto;
-        display: block;
-    }
-
-    .modal-content-second-part {
-        text-align: center; /* Centrer le texte de la description sur mobile */
     }
 }
